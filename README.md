@@ -1,1 +1,2 @@
-tryingDjango
+
+Django Girls Tutorial
