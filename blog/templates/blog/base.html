@@ -14,12 +14,13 @@
     <body>
       <div class="page-header">
         {% if user.is_authenticated %}
-          <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+          <a href="{% url 'post_new' %}" class="top-menu plus-icon"><span class="glyphicon glyphicon-plus"></span></a>
         {% endif %}
           <h1 class="text-center"><a href="/">Funny Django Blog</a></h1>
 
       </div>
-      <div class="container">
+
+      <div class="container content">
           <div class="row justify-content-md-center">
               <div class="col-md-auto">
               {% block content %}
