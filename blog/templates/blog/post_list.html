@@ -5,7 +5,8 @@
 {% block content %}
   {% for post in posts %}
     <div class="post">
-      <h1><a href="">{{ post.title }}</a></h1>
+      <!--pk is the primary key for a record in the db-->
+      <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
       <div class="publishedDate">
           <p>published: {{ post.published_date }}</p>
       </div>
