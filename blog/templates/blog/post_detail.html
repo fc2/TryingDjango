@@ -12,6 +12,12 @@
                <p>{{ post.published_date }}</p>
             </div>
         {% endif %}
+        {% if post.image %}
+            <div>
+              <img src="{{post.image.url}}" class="img-responsive">
+            </div>
+        {% endif %}
+        </br>  </br>
         <p>{{ post.text|linebreaksbr }}</p>
     </div>
 {% endblock %}

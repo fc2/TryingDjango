@@ -10,6 +10,13 @@
       <div class="publishedDate">
           <p>published: {{ post.published_date }}</p>
       </div>
+      {% if post.image %}
+          <div>
+            <img src="{{post.image.url}}" class="img-responsive">
+          </div>
+        </br>  </br>
+      {% endif %}
+
           <p>{{ post.text|linebreaksbr|truncatewords_html:100}}</p>
       </div>
   {% endfor %}
