@@ -10,7 +10,7 @@
       <div class="publishedDate">
           <p>published: {{ post.published_date }}</p>
       </div>
-          <p>{{ post.text|linebreaksbr }}</p>
+          <p>{{ post.text|linebreaksbr|truncatewords_html:100}}</p>
       </div>
   {% endfor %}
 {% endblock %}
