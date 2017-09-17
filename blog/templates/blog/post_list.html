@@ -1,38 +1,15 @@
-<!--load the staticfiles where the css is-->
-{% load staticfiles %}
 
-<html>
-    <head>
-      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-      <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-      <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+<!--extending the base template-->
+{% extends 'blog/base.html' %}
 
-        <title>Funny Django Blog</title>
-
-    </head>
-    <body>
-        <div class="page-header">
-            <h1><a href="">Funny Django Blog</a></h1>
-        </div>
-
-      <!--separating each object from the QuerySet -->
-
-        <div class="content container">
-          <div class="row">
-            <div class="col-md-8">
-              {% for post in posts %}
-              <div class="post">
-                  <h1><a href="">{{ post.title }}</a></h1>
-                  <div class="publishedDate">
-                    <p>published: {{ post.published_date }}</p>
-                  </div>
-                  <p>{{ post.text|linebreaksbr }}</p>
-              </div>
-              {% endfor %}
-            </div>
-          </div>
+{% block content %}
+  {% for post in posts %}
+    <div class="post">
+      <h1><a href="">{{ post.title }}</a></h1>
+      <div class="publishedDate">
+          <p>published: {{ post.published_date }}</p>
       </div>
-
-    </body>
-</html>
+          <p>{{ post.text|linebreaksbr }}</p>
+      </div>
+  {% endfor %}
+{% endblock %}
